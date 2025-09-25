@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Synaphack — Connect. Secure. Innovate.</title>
+  <meta name="description" content="Synaphack — a community & platform for security researchers, hackers, and builders. Join hackathons, learn, and collaborate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent1:#6ee7b7;
+      --accent2:#7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(800px 400px at 10% 10%, rgba(124,92,255,0.08), transparent),
+                  radial-gradient(600px 300px at 90% 80%, rgba(110,231,183,0.04), transparent),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+    }
+
+    /* NAV */
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
+    .logo{
+      width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-weight:800;
+      background:linear-gradient(135deg,var(--accent2),var(--accent1));
+      box-shadow:0 6px 30px rgba(124,92,255,0.12), inset 0 -6px 24px rgba(0,0,0,0.2);
+    }
+    .brand h1{font-family:'Space Grotesk', Inter; font-size:18px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .btn{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#042;box-shadow:0 8px 30px rgba(124,92,255,0.12);border:none}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);padding:28px;border:1px solid rgba(255,255,255,0.04);backdrop-filter: blur(6px);
+    }
+    .eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--accent1);font-weight:700;font-size:12px;margin-bottom:12px}
+    .hero h2{margin:0 0 12px 0;font-size:28px;line-height:1.02}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:12px;border-radius:12px;min-width:160px;border:1px solid rgba(255,255,255,0.03)}
+    .feature h4{margin:0 0 6px 0}
+    .hero-visual{position:relative;height:100%;display:flex;flex-direction:column;gap:16px}
+    .card.small{padding:18px}
+
+    /* CTA */
+    .cta{display:flex;gap:12px;margin-top:8px}
+
+    /* GRID: sections */
+    section{margin-top:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+    /* speakers / challenges */
+    .mini{display:flex;gap:12px;align-items:center}
+    .avatar{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),var(--accent1));display:grid;place-items:center;font-weight:700}
+
+    /* FOOTER */
+    footer{display:flex;justify-content:space-between;align-items:center;padding:18px;border-radius:12px;margin-top:36px;background:transparent;border:1px solid rgba(255,255,255,0.03)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .container{padding:0 8px}
+      nav{display:none}
+    }
+
+    /* subtle micro-animations */
+    .pulse{animation:pulse 4s linear infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+
+    /* utility */
+    .muted{color:var(--muted)}
+    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+    input,textarea{width:100%;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">S</div>
+        <div>
+          <h1>Synaphack</h1>
+          <div class="muted" style="font-size:12px;margin-top:2px">Connect. Secure. Innovate.</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#challenges">Challenges</a>
+        <a href="#community">Community</a>
+        <button class="btn primary" id="joinBtn">Join Waitlist</button>
+      </nav>
+
+      <button class="btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    </header>
+
+    <main class="hero">
+      <div class="card">
+        <span class="eyebrow">Hackathon • Community</span>
+        <h2>Synaphack — a playground for security builders and curious minds</h2>
+        <p class="lead">Join hands-on challenges, get mentored by top researchers, and collaborate on open-source security tooling. Whether you're a beginner or a pro, Synaphack helps you level up.</p>
+
+        <div class="features">
+          <div class="feature">
+            <h4>Live CTFs</h4>
+            <p class="muted" style="margin:0">Hands-on capture-the-flag events every month.</p>
+          </div>
+          <div class="feature">
+            <h4>Workshops</h4>
+            <p class="muted" style="margin:0">Beginner → Advanced tracks led by industry experts.</p>
+          </div>
+          <div class="feature">
+            <h4>Bug Bounties</h4>
+            <p class="muted" style="margin:0">Real-world targets with safe-scoped programs.</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <button class="btn primary" id="exploreBtn">Explore Events</button>
+          <button class="btn" id="learnBtn">Get Started Guide</button>
+        </div>
+
+        <div style="margin-top:18px;font-size:13px;color:var(--muted)">
+          <strong>Next event:</strong> Synaphack Sprint — Oct 18, 2025 &middot; Remote • Limited slots
+        </div>
+      </div>
+
+      <aside class="hero-visual">
+        <div class="card small pulse">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div>
+              <div class="muted" style="font-size:12px">Live scoreboard</div>
+              <div style="font-weight:700">Team Nebula <span class="muted" style="font-weight:400">• 420 pts</span></div>
+            </div>
+            <div class="pill">CTF</div>
+          </div>
+          <div style="height:8px;background:rgba(255,255,255,0.03);border-radius:8px;overflow:hidden">
+            <div style="width:72%;height:8px;background:linear-gradient(90deg,var(--accent1),var(--accent2))"></div>
+          </div>
+        </div>
+
+        <div class="card small">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div class="muted" style="font-size:12px">Upcoming workshop</div>
+              <div style="font-weight:700">Intro to Binary Exploitation</div>
+            </div>
+            <div class="avatar">BE</div>
+          </div>
+        </div>
+
+        <div class="card small">
+          <div style="font-size:13px;margin-bottom:8px;color:var(--muted)">Community Leaders</div>
+          <div class="grid-3">
+            <div class="mini"><div class="avatar">AR</div><div><div style="font-weight:700">A. Roy</div><div class="muted" style="font-size:12px">Lead Mentor</div></div></div>
+            <div class="mini"><div class="avatar">LX</div><div><div style="font-weight:700">L. Xu</div><div class="muted" style="font-size:12px">CTF Coach</div></div></div>
+            <div class="mini"><div class="avatar">MV</div><div><div style="font-weight:700">M. V</div><div class="muted" style="font-size:12px">Bug Bounty</div></div></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="about" class="card" style="margin-top:20px">
+      <h3 style="margin-top:0">About Synaphack</h3>
+      <p class="muted">Synaphack is a community-driven platform where security researchers, students, and engineers come together to learn, compete, and build. We host monthly events, mentorship cohorts, and open-source projects focused on improving tooling and defensive practices.</p>
+
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <div style="flex:1">
+          <h4 style="margin-bottom:8px">Mission</h4>
+          <p class="muted">Democratize practical security education and foster collaborations that make software safer.</p>
+        </div>
+        <div style="flex:1">
+          <h4 style="margin-bottom:8px">Values</h4>
+          <p class="muted">Respect, curiosity, responsible disclosure, and open-source first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenges" class="card">
+      <h3 style="margin-top:0">Featured Challenges</h3>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card" style="padding:16px">
+          <h4 style="margin:0 0 6px 0">Web Exploit — Crossroads</h4>
+          <p class="muted" style="margin:0 0 8px 0">A progressive web CTF focusing on XSS, SSRF and server misconfigurations.</p>
+          <div class="muted" style="font-size:13px">Difficulty: Intermediate</div>
+        </div>
+        <div class="card" style="padding:16px">
+          <h4 style="margin:0 0 6px 0">Binary — Rusty Stack</h4>
+          <p class="muted" style="margin:0 0 8px 0">Reverse engineering and exploitation with modern toolchains.</p>
+          <div class="muted" style="font-size:13px">Difficulty: Advanced</div>
+        </div>
+        <div class="card" style="padding:16px">
+          <h4 style="margin:0 0 6px 0">Forensics — Traceback</h4>
+          <p class="muted" style="margin:0 0 8px 0">Investigate realistic incidents using memory and disk analysis.</p>
+          <div class="muted" style="font-size:13px">Difficulty: Beginner → Intermediate</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="card">
+      <h3 style="margin-top:0">Join the community</h3>
+      <p class="muted">We run a Discord for day-to-day chats, a forum for writeups and long-form posts, and public repos for tooling. Sign up to get event invites and early access to private tests.</p>
+
+      <form id="waitlistForm" style="margin-top:12px;display:grid;gap:10px;max-width:520px">
+        <div>
+          <label for="name">Full name</label>
+          <input id="name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@domain.com" required>
+        </div>
+        <div>
+          <label for="role">I'm a</label>
+          <select id="role">
+            <option>Student</option>
+            <option>Security Researcher</option>
+            <option>Developer</option>
+            <option>Enthusiast</option>
+          </select>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn primary" type="submit">Join Waitlist</button>
+          <button class="btn" type="button" id="volunteerBtn">Volunteer</button>
+        </div>
+        <div id="formMsg" class="muted" style="font-size:13px"></div>
+      </form>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Synaphack</strong> &middot; 2025
+        <div class="muted" style="font-size:13px">Built with community-first values.</div>
+      </div>
+      <div class="muted">Follow us: <span style="margin-left:8px">Twitter • GitHub • Discord</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile menu toggle (simple)
+    document.getElementById('mobileMenuBtn').addEventListener('click',()=>{
+      alert('Mobile menu — navigation hidden on narrow screens in this static demo.');
+    });
+
+    // CTA handlers (demo behavior)
+    document.getElementById('exploreBtn').addEventListener('click',()=>{
+      location.href = '#challenges';
+    });
+    document.getElementById('learnBtn').addEventListener('click',()=>{
+      window.open('https://example.com/getting-started','_blank');
+    });
+    document.getElementById('joinBtn').addEventListener('click',()=>{
+      document.getElementById('waitlistForm').scrollIntoView({behavior:'smooth'});
+    });
+
+    // Form: simple client-side validation and simulated submit
+    const form = document.getElementById('waitlistForm');
+    const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name || !email){
+        msg.textContent = 'Please fill name and email.';
+        return;
+      }
+      // simulate a submission and success
+      msg.textContent = 'Thanks — you\'re on the waitlist! Check your inbox for confirmation.';
+      form.reset();
+      // NOTE: Replace this with real API call to register user in production.
+    });
+
+    document.getElementById('volunteerBtn').addEventListener('click',()=>{
+      const ok = confirm('Volunteer to help run events? You will be contacted via email. Continue?');
+      if(ok) msg.textContent = 'Thanks — we will reach out about volunteering opportunities.';
+    });
+  </script>
+</body>
+</html>
